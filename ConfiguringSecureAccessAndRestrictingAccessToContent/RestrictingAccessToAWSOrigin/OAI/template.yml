@@ -4,6 +4,9 @@ Description: CDN sample
 # ------------------------------------------------------------#
 # Input Parameters
 # ------------------------------------------------------------#
+Parameters:
+  BucketName:
+    Type: String
 
 Resources:
   # ------------------------------------------------------------#
@@ -61,12 +64,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: your-bucket-name-here
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
+      BucketName: !Sub ${BucketName}
 
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
