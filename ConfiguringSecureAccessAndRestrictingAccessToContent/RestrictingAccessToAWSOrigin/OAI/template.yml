@@ -27,7 +27,7 @@ Resources:
         Origins:
           - # DomainName: !GetAtt S3Bucket.DomainName
             # Under the condition that Bucket region is not us-east-1 and does not pass 24 hours after creating it, Give DomainName Bucket region
-            DomainName: !Sub ${S3Bucket}.s3-${AWS::Region}.amazonaws.com
+            DomainName: !Sub ${S3Bucket}.s3.${AWS::Region}.amazonaws.com
             # Use this Id to specify the TargetOriginId in a CacheBehavior or DefaultCacheBehavior.
             Id: !Sub S3-${S3Bucket}
             S3OriginConfig:

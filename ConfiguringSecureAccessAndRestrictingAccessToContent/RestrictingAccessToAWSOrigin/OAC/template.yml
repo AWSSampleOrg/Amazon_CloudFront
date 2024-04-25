@@ -40,7 +40,7 @@ Resources:
     Type: AWS::CloudFront::OriginAccessControl
     Properties:
       OriginAccessControlConfig:
-        Name: !Sub ${S3Bucket}.s3-${AWS::Region}.amazonaws.com
+        Name: !Sub ${S3Bucket}.s3.${AWS::Region}.amazonaws.com
         OriginAccessControlOriginType: s3
         SigningBehavior: always
         SigningProtocol: sigv4
